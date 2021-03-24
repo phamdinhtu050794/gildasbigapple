@@ -1,14 +1,30 @@
 <template>
   <div id="app">
-    <div id="nav">
-      <router-link to="/">Home</router-link> |
-      <router-link to="/about">About</router-link>
-    </div>
+     <link
+        href="https://fonts.googleapis.com/icon?family=Material+Icons"
+        rel="stylesheet"
+      />
+
+
+
+      <button v-if="this.$route.name != 'RelaxClub'" id="home-btn">
+         <router-link :to="{ name: 'Home'}">
+        <i class="material-icons" style="font-size: 48px;color:black">&#xe88a;</i>
+        </router-link>
+      </button>
     <router-view/>
   </div>
 </template>
 
 <style lang="scss">
+#home-btn{
+  position: absolute;
+  top: 0; 
+  left: 10px;
+    height: 50px;
+    border: none;
+    
+}
 #app {
   font-family: Avenir, Helvetica, Arial, sans-serif;
   -webkit-font-smoothing: antialiased;
